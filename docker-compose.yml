@@ -1,0 +1,11 @@
+version: '2'
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    ports:
+      - '4000:80'
+    volumes:
+      - '~/docker/srv/gitlab/config:/etc/gitlab'
+      - '~/docker/srv/gitlab/logs:/var/log/gitlab'
+      - '~/docker/srv/data:/var/opt/gitlab'
